@@ -1,158 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>JobTrack | Job Application Tracker</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <header class="site-header">
-      <div class="header-content">
-        <a class="logo" href="#">JobTrack</a>
 
-        <nav class="main-nav" aria-label="Main navigation">
-          <a href="#dashboard">Dashboard</a>
-          <a href="#add-application">Add Application</a>
-          <a href="#applications">Applications</a>
-        </nav>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JobTrack | Job Application Tracker</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="header-content">
+      <a class="logo" href="#">JobTrack</a>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="#dashboard">Dashboard</a>
+        <a href="#add-application">Add Application</a>
+        <a href="#applications">Applications</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-wrapper">
+    <section class="dashboard-section" id="dashboard" aria-labelledby="dashboard-title">
+      <div class="section-heading">
+        <h1 id="dashboard-title">Job Application Tracker</h1>
+        <p>Track your applications, interviews, and offers in one simple dashboard.</p>
       </div>
-    </header>
 
-    <main class="page-wrapper">
-      <section class="dashboard-section" id="dashboard" aria-labelledby="dashboard-title">
-        <div class="section-heading">
-          <h1 id="dashboard-title">Job Application Tracker</h1>
-          <p>Track your applications, interviews, and offers in one simple dashboard.</p>
+      <div class="stats-grid" aria-label="Application summary">
+        <article class="stat-card">
+          <span class="stat-label">Total Applications</span>
+          <strong class="stat-number" id="total-applications-count">24</strong>
+        </article>
+
+        <article class="stat-card">
+          <span class="stat-label">Applied</span>
+          <strong class="stat-number" id="applied-count">14</strong>
+        </article>
+
+        <article class="stat-card">
+          <span class="stat-label">Interviews</span>
+          <strong class="stat-number" id="interviews-count">6</strong>
+        </article>
+
+        <article class="stat-card">
+          <span class="stat-label">Offers</span>
+          <strong class="stat-number" id="offers-count">2</strong>
+        </article>
+      </div>
+    </section>
+
+    <section class="content-grid">
+      <section class="panel form-panel" id="add-application" aria-labelledby="form-title">
+        <div class="panel-heading">
+          <h2 id="form-title">Add Application</h2>
+          <p>Enter the details for a new job application.</p>
         </div>
 
-        <div class="stats-grid" aria-label="Application summary">
-          <article class="stat-card">
-            <span class="stat-label">Total Applications</span>
-            <strong class="stat-number" id="total-applications-count">24</strong>
-          </article>
-
-          <article class="stat-card">
-            <span class="stat-label">Applied</span>
-            <strong class="stat-number" id="applied-count">14</strong>
-          </article>
-
-          <article class="stat-card">
-            <span class="stat-label">Interviews</span>
-            <strong class="stat-number" id="interviews-count">6</strong>
-          </article>
-
-          <article class="stat-card">
-            <span class="stat-label">Offers</span>
-            <strong class="stat-number" id="offers-count">2</strong>
-          </article>
-        </div>
-      </section>
-
-      <section class="content-grid">
-        <section class="panel form-panel" id="add-application" aria-labelledby="form-title">
-          <div class="panel-heading">
-            <h2 id="form-title">Add Application</h2>
-            <p>Enter the details for a new job application.</p>
+        <form class="application-form" id="application-form">
+          <div class="form-group">
+            <label for="company-name">Company Name</label>
+            <input class="form-input" type="text" id="company-name" name="companyName"
+              placeholder="Example: Acme Corp" />
           </div>
 
-          <form class="application-form" id="application-form">
-            <div class="form-group">
-              <label for="company-name">Company Name</label>
-              <input
-                class="form-input"
-                type="text"
-                id="company-name"
-                name="companyName"
-                placeholder="Example: Acme Corp"
-              />
-            </div>
-
-            <div class="form-group">
-              <label for="job-title">Job Title</label>
-              <input
-                class="form-input"
-                type="text"
-                id="job-title"
-                name="jobTitle"
-                placeholder="Example: Frontend Developer"
-              />
-            </div>
-
-            <div class="form-group">
-              <label for="job-url">Job URL</label>
-              <input
-                class="form-input"
-                type="url"
-                id="job-url"
-                name="jobUrl"
-                placeholder="https://example.com/job"
-              />
-            </div>
-
-            <div class="form-row">
-              <div class="form-group">
-                <label for="application-status">Status</label>
-                <select class="form-input" id="application-status" name="applicationStatus">
-                  <option value="applied">Applied</option>
-                  <option value="interview">Interview</option>
-                  <option value="offer">Offer</option>
-                  <option value="rejected">Rejected</option>
-                </select>
-              </div>
-
-              <div class="form-group">
-                <label for="application-date">Application Date</label>
-                <input
-                  class="form-input"
-                  type="date"
-                  id="application-date"
-                  name="applicationDate"
-                />
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label for="application-notes">Notes</label>
-              <textarea
-                class="form-input"
-                id="application-notes"
-                name="applicationNotes"
-                rows="4"
-                placeholder="Add any notes about the role, recruiter, or next steps."
-              ></textarea>
-            </div>
-
-            <button class="button button-primary" id="add-application-button" type="submit">
-              Add Application
-            </button>
-          </form>
-        </section>
-
-        <section class="panel applications-panel" id="applications" aria-labelledby="applications-title">
-          <div class="panel-heading applications-heading">
-            <div>
-              <h2 id="applications-title">Applications</h2>
-              <p>Review your saved job opportunities and next steps.</p>
-            </div>
+          <div class="form-group">
+            <label for="job-title">Job Title</label>
+            <input class="form-input" type="text" id="job-title" name="jobTitle"
+              placeholder="Example: Frontend Developer" />
           </div>
 
-          <form class="controls-bar" id="application-controls" aria-label="Search and filter applications">
-            <div class="control-group search-control">
-              <label for="application-search">Search</label>
-              <input
-                class="form-input"
-                type="search"
-                id="application-search"
-                name="applicationSearch"
-                placeholder="Search company or position"
-              />
-            </div>
+          <div class="form-group">
+            <label for="job-url">Job URL</label>
+            <input class="form-input" type="url" id="job-url" name="jobUrl" placeholder="https://example.com/job" />
+          </div>
 
-            <div class="control-group">
-              <label for="status-filter">Status</label>
-              <select class="form-input" id="status-filter" name="statusFilter">
-                <option value="all">All Statuses</option>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="application-status">Status</label>
+              <select class="form-input" id="application-status" name="applicationStatus">
                 <option value="applied">Applied</option>
                 <option value="interview">Interview</option>
                 <option value="offer">Offer</option>
@@ -160,43 +87,88 @@
               </select>
             </div>
 
-            <div class="control-group">
-              <label for="sort-applications">Sort</label>
-              <select class="form-input" id="sort-applications" name="sortApplications">
-                <option value="newest">Newest First</option>
-                <option value="oldest">Oldest First</option>
-                <option value="company">Company Name</option>
-                <option value="status">Status</option>
-              </select>
+            <div class="form-group">
+              <label for="application-date">Application Date</label>
+              <input class="form-input" type="date" id="application-date" name="applicationDate" />
             </div>
-          </form>
-
-          <div class="table-wrapper">
-            <table class="applications-table" id="applications-table">
-              <caption>
-                Sample job applications
-              </caption>
-              <thead>
-                <tr>
-                  <th scope="col">Company</th>
-                  <th scope="col">Position</th>
-                  <th scope="col">Status</th>
-                  <th scope="col">Date</th>
-                  <th scope="col">Actions</th>
-                </tr>
-              </thead>
-              <tbody id="applications-table-body">
-              </tbody>
-            </table>
           </div>
 
-          <div class="empty-state" id="empty-state">
-            <h3>No applications yet</h3>
-            <p>Once you add applications, they can appear here.</p>
+          <div class="form-group">
+            <label for="application-notes">Notes</label>
+            <textarea class="form-input" id="application-notes" name="applicationNotes" rows="4"
+              placeholder="Add any notes about the role, recruiter, or next steps."></textarea>
           </div>
-        </section>
+
+          <button class="button button-primary" id="add-application-button" type="submit">
+            Add Application
+          </button>
+        </form>
       </section>
-    </main>
-    <script src="script.js"></script>
-  </body>
+
+      <section class="panel applications-panel" id="applications" aria-labelledby="applications-title">
+        <div class="panel-heading applications-heading">
+          <div>
+            <h2 id="applications-title">Applications</h2>
+            <p>Review your saved job opportunities and next steps.</p>
+          </div>
+        </div>
+
+        <form class="controls-bar" id="application-controls" aria-label="Search and filter applications">
+          <div class="control-group search-control">
+            <label for="application-search">Search</label>
+            <input class="form-input" type="search" id="application-search" name="applicationSearch"
+              placeholder="Search company or position" />
+          </div>
+
+          <div class="control-group">
+            <label for="status-filter">Status</label>
+            <select class="form-input" id="status-filter" name="statusFilter">
+              <option value="all">All Statuses</option>
+              <option value="applied">Applied</option>
+              <option value="interview">Interview</option>
+              <option value="offer">Offer</option>
+              <option value="rejected">Rejected</option>
+            </select>
+          </div>
+
+          <div class="control-group">
+            <label for="sort-applications">Sort</label>
+            <select class="form-input" id="sort-applications" name="sortApplications">
+              <option value="newest">Newest First</option>
+              <option value="oldest">Oldest First</option>
+              <option value="company">Company Name</option>
+              <option value="status">Status</option>
+            </select>
+          </div>
+        </form>
+
+        <div class="table-wrapper">
+          <table class="applications-table" id="applications-table">
+            <caption>
+              Sample job applications
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col">Company</th>
+                <th scope="col">Position</th>
+                <th scope="col">Status</th>
+                <th scope="col">Date</th>
+                <th scope="col">Actions</th>
+              </tr>
+            </thead>
+            <tbody id="applications-table-body">
+            </tbody>
+          </table>
+        </div>
+
+        <div class="empty-state" id="empty-state">
+          <h3>No applications yet</h3>
+          <p>Once you add applications, they can appear here.</p>
+        </div>
+      </section>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+
 </html>
