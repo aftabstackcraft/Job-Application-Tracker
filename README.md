@@ -6,11 +6,11 @@ The application helps users manage job applications, track application status, s
 
 ## 🚀 Live Demo
 
-[[View Live Demo]((https://aftabstackcraft.github.io/Job-Application-Tracker/))]
+[View Live Demo](https://aftabstackcraft.github.io/Job-Application-Tracker/)
 
 ## 📂 GitHub Repository
 
-[View Source Code](YOUR_GITHUB_REPOSITORY_LINK)
+[View Source Code](https://github.com/aftabstackcraft/Job-Application-Tracker/)
 
 ---
 
